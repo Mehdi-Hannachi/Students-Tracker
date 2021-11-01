@@ -1,7 +1,9 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
+import SearchStudent from "../Filter/SearchStudent";
+import AddStudent from "../StudentForm/AddStudent";
 
-const NavBar = () => {
+const NavBar = ({ addStudent, setFilterByName }) => {
   return (
     <div>
       <Navbar bg="dark" variant="dark">
@@ -12,6 +14,10 @@ const NavBar = () => {
             <Nav.Link href="#features">Features</Nav.Link>
             <Nav.Link href="#pricing">Pricing</Nav.Link>
           </Nav>
+
+          <SearchStudent setFilterByName={setFilterByName} />
+
+          <AddStudent addStudent={addStudent} />
         </Container>
       </Navbar>
     </div>
