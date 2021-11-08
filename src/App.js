@@ -1,10 +1,10 @@
 import "./App.css";
 import { useState } from "react";
-import Main from "./components/Main/Main";
 import NavBar from "./components/NavBar/NavBar";
 import StudentsList from "./components/StudentsList/StudentsList";
 import { data } from "./data";
-import SearchStudent from "./components/Filter/SearchStudent";
+import StudentDetails from "./components/StudentDetails/StudentDetails";
+import { Route } from "react-router-dom";
 
 const sayHi = (name) => {
   return alert(`Hello i am ${name}`);
@@ -22,10 +22,24 @@ const App = () => {
     <div>
       <NavBar addStudent={addStudent} setFilterByName={setFilterByName} />
 
-      <StudentsList
-        students={students}
-        filterByName={filterByName}
-        sayHi={sayHi}
+      <Route
+        exact
+        path="/"
+        component={() => (
+          <StudentsList
+            students={students}
+            filterByName={filterByName}
+            sayHi={sayHi}
+          />
+        )}
+      />
+
+      <Route
+        exact
+        path="/studentdetails/:myid"
+        component={(defaultProps) => (
+          <StudentDetails students={students} {...defaultProps} />
+        )}
       />
     </div>
   );

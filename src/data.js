@@ -1,6 +1,6 @@
 export const data = [
   {
-    id: 1,
+    id: Math.random(),
     photo:
       "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
     firstName: "Seif",
@@ -8,7 +8,7 @@ export const data = [
   },
 
   {
-    id: 2,
+    id: Math.random(),
     photo:
       "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
     firstName: "Hassan",
@@ -16,7 +16,7 @@ export const data = [
   },
 
   {
-    id: 3,
+    id: Math.random(),
     photo:
       "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
     firstName: "Aziz",
@@ -24,7 +24,7 @@ export const data = [
   },
 
   {
-    id: 2,
+    id: Math.random(),
     photo:
       "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
     firstName: "Habiba",
@@ -32,7 +32,7 @@ export const data = [
   },
 
   {
-    id: 2,
+    id: Math.random(),
     photo:
       "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
     firstName: "Med Ali",
@@ -40,7 +40,7 @@ export const data = [
   },
 
   {
-    id: 2,
+    id: Math.random(),
     photo:
       "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
     firstName: "Dhouha",
@@ -48,7 +48,7 @@ export const data = [
   },
 
   {
-    id: 2,
+    id: Math.random(),
     photo:
       "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
     firstName: "Senda",
@@ -56,14 +56,14 @@ export const data = [
   },
 
   {
-    id: 2,
+    id: Math.random(),
     photo:
       "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
     firstName: "Rayes",
     secondName: "Guesmi",
   },
   {
-    id: 2,
+    id: Math.random(),
     photo:
       "https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
     firstName: "Sami",
