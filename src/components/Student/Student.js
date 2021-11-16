@@ -1,27 +1,34 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { deleteStudent } from "../JS/actions/studentsActions";
 const Student = ({
   student: { id, firstName, secondName, photo },
   sayHi,
   desc,
 }) => {
+  const dispatch = useDispatch();
+  const history = useHistory();
+
   return (
     <div>
-      <Link to={`/studentdetails/${id}`}>
-        <Card style={{ width: "18rem", margin: "40px" }}>
-          <Card.Img variant="top" src={photo} />
-          <Card.Body>
-            <Card.Title>{firstName}</Card.Title>
-            <Card.Title>{secondName}</Card.Title>
-            <Card.Text>{desc}</Card.Text>
-            <Button variant="primary" onClick={() => sayHi(firstName)}>
-              Say Hi
-            </Button>
-          </Card.Body>
-        </Card>
-      </Link>
+      <Card style={{ width: "18rem", margin: "40px" }}>
+        <Card.Img variant="top" src={photo} />
+        <Card.Body>
+          <Card.Title>{firstName}</Card.Title>
+          <Card.Title>{secondName}</Card.Title>
+          <Card.Text>{desc}</Card.Text>
+          <Link to={`/studentdetails/${id}`}>
+            <Button variant="primary">Show more details</Button>
+          </Link>
+          <Button variant="primary" onClick={() => dispatch(deleteStudent(id))}>
+            Delete
+          </Button>
+        </Card.Body>
+      </Card>
     </div>
   );
 };

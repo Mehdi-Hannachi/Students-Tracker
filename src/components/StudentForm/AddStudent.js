@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
+import { useDispatch } from "react-redux";
 import { Form, Button, Col } from "react-bootstrap";
 import { v4 as uuidv4 } from "uuid";
+import { addStudent } from "../JS/actions/studentsActions";
 
 const customStyles = {
   content: {
@@ -14,7 +16,8 @@ const customStyles = {
   },
 };
 
-const AddStudent = ({ addStudent }) => {
+const AddStudent = () => {
+  const dispatch = useDispatch();
   const [modalIsOpen, setIsOpen] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [secondName, setSecondName] = useState("");
@@ -37,7 +40,8 @@ const AddStudent = ({ addStudent }) => {
       secondName,
     };
 
-    addStudent(newStudent);
+    dispatch(addStudent(newStudent));
+
     closeModal();
   };
 

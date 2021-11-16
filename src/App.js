@@ -1,36 +1,24 @@
 import "./App.css";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import NavBar from "./components/NavBar/NavBar";
 import StudentsList from "./components/StudentsList/StudentsList";
-import { data } from "./data";
 import StudentDetails from "./components/StudentDetails/StudentDetails";
 import { Route } from "react-router-dom";
 
-const sayHi = (name) => {
-  return alert(`Hello i am ${name}`);
-};
-
 const App = () => {
-  const [students, setStudents] = useState(data);
+  const students = useSelector((state) => state.studentsReducer.students);
   const [filterByName, setFilterByName] = useState("");
-
-  const addStudent = (newStudent) => {
-    return setStudents([...students, newStudent]);
-  };
 
   return (
     <div>
-      <NavBar addStudent={addStudent} setFilterByName={setFilterByName} />
+      <NavBar setFilterByName={setFilterByName} />
 
       <Route
         exact
         path="/"
         component={() => (
-          <StudentsList
-            students={students}
-            filterByName={filterByName}
-            sayHi={sayHi}
-          />
+          <StudentsList students={students} filterByName={filterByName} />
         )}
       />
 
