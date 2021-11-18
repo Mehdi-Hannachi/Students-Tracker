@@ -1,13 +1,20 @@
 import "./App.css";
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import NavBar from "./components/NavBar/NavBar";
 import StudentsList from "./components/StudentsList/StudentsList";
 import StudentDetails from "./components/StudentDetails/StudentDetails";
 import { Route } from "react-router-dom";
+import { getUsers } from "./components/JS/actions/studentsActions";
 
 const App = () => {
-  const students = useSelector((state) => state.studentsReducer.students);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getUsers());
+  }, []);
+
+  // const students = useSelector((state) => state.studentsReducer.students);
   const [filterByName, setFilterByName] = useState("");
 
   return (
@@ -17,17 +24,13 @@ const App = () => {
       <Route
         exact
         path="/"
-        component={() => (
-          <StudentsList students={students} filterByName={filterByName} />
-        )}
+        component={() => <StudentsList filterByName={filterByName} />}
       />
 
       <Route
         exact
         path="/studentdetails/:myid"
-        component={(defaultProps) => (
-          <StudentDetails students={students} {...defaultProps} />
-        )}
+        component={(defaultProps) => <StudentDetails {...defaultProps} />}
       />
     </div>
   );

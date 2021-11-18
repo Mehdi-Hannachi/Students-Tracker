@@ -1,13 +1,19 @@
 import React from "react";
 import Student from "../Student/Student";
+import { useSelector } from "react-redux";
 import "./studentlist.css";
 
-const StudentsList = ({ filterByName, students, sayHi }) => {
-  return (
+const StudentsList = ({ filterByName, sayHi }) => {
+  const loading = useSelector((state) => state.studentsReducer.loading);
+  const students = useSelector((state) => state.studentsReducer.students);
+
+  return loading ? (
+    <h1> Please Wait ...</h1>
+  ) : (
     <div className="studentlist">
       {students
         .filter((student) =>
-          student.firstName.toLowerCase().includes(filterByName.toLowerCase())
+          student.name.toLowerCase().includes(filterByName.toLowerCase())
         )
         .map((student, i) => (
           <Student student={student} sayHi={sayHi} key={i} />

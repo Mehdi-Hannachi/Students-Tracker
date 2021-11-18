@@ -35,9 +35,8 @@ const AddStudent = () => {
     e.preventDefault();
     let newStudent = {
       id: uuidv4(),
-      photo,
-      firstName,
-      secondName,
+      name: firstName,
+      username: secondName,
     };
 
     dispatch(addStudent(newStudent));

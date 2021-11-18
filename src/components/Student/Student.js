@@ -5,21 +5,16 @@ import { useDispatch } from "react-redux";
 import PropTypes from "prop-types";
 import { Link, useHistory } from "react-router-dom";
 import { deleteStudent } from "../JS/actions/studentsActions";
-const Student = ({
-  student: { id, firstName, secondName, photo },
-  sayHi,
-  desc,
-}) => {
+const Student = ({ student: { id, name, username }, sayHi, desc }) => {
   const dispatch = useDispatch();
-  const history = useHistory();
 
   return (
     <div>
       <Card style={{ width: "18rem", margin: "40px" }}>
-        <Card.Img variant="top" src={photo} />
+        {/* <Card.Img variant="top" src={photo} /> */}
         <Card.Body>
-          <Card.Title>{firstName}</Card.Title>
-          <Card.Title>{secondName}</Card.Title>
+          <Card.Title>{name}</Card.Title>
+          <Card.Title>{username}</Card.Title>
           <Card.Text>{desc}</Card.Text>
           <Link to={`/studentdetails/${id}`}>
             <Button variant="primary">Show more details</Button>
